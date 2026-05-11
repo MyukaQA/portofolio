@@ -1,358 +1,752 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Backend Systems Architect &amp; Laravel Developer</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-tertiary-container": "#22293d",
-                      "outline": "#af8781",
-                      "surface-container": "#122131",
-                      "surface-variant": "#273647",
-                      "on-primary": "#690001",
-                      "surface-container-highest": "#273647",
-                      "tertiary-container": "#8990a8",
-                      "inverse-on-surface": "#233143",
-                      "on-primary-fixed": "#410000",
-                      "secondary-fixed-dim": "#c0c1ff",
-                      "surface-bright": "#2c3a4c",
-                      "on-tertiary-fixed-variant": "#3f465c",
-                      "tertiary-fixed-dim": "#bec6e0",
-                      "on-surface-variant": "#e8bcb6",
-                      "primary-fixed": "#ffdad5",
-                      "surface-tint": "#ffb4a8",
-                      "on-tertiary-fixed": "#131b2e",
-                      "on-error": "#690005",
-                      "primary-container": "#ff5542",
-                      "on-error-container": "#ffdad6",
-                      "on-tertiary": "#283044",
-                      "inverse-surface": "#d4e4fa",
-                      "surface-container-high": "#1c2b3c",
-                      "secondary": "#c0c1ff",
-                      "on-secondary": "#1000a9",
-                      "on-secondary-fixed-variant": "#2f2ebe",
-                      "surface": "#051424",
-                      "secondary-container": "#3131c0",
-                      "error-container": "#93000a",
-                      "tertiary-fixed": "#dae2fd",
-                      "background": "#051424",
-                      "on-background": "#d4e4fa",
-                      "primary": "#ffb4a8",
-                      "on-primary-container": "#5c0000",
-                      "surface-container-low": "#0d1c2d",
-                      "on-surface": "#d4e4fa",
-                      "error": "#ffb4ab",
-                      "primary-fixed-dim": "#ffb4a8",
-                      "surface-dim": "#051424",
-                      "outline-variant": "#5e3f3a",
-                      "tertiary": "#bec6e0",
-                      "on-secondary-container": "#b0b2ff",
-                      "surface-container-lowest": "#010f1f",
-                      "on-primary-fixed-variant": "#930001",
-                      "secondary-fixed": "#e1e0ff",
-                      "on-secondary-fixed": "#07006c",
-                      "inverse-primary": "#c00003"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "gutter": "24px",
-                      "max-width": "1200px",
-                      "md": "24px",
-                      "base": "4px",
-                      "xs": "8px",
-                      "lg": "48px",
-                      "sm": "16px",
-                      "xl": "80px"
-              },
-              "fontFamily": {
-                      "headline-xl": [
-                              "Space Grotesk"
-                      ],
-                      "label-md": [
-                              "Inter"
-                      ],
-                      "headline-md": [
-                              "Space Grotesk"
-                      ],
-                      "body-md": [
-                              "Inter"
-                      ],
-                      "headline-lg": [
-                              "Space Grotesk"
-                      ],
-                      "body-lg": [
-                              "Inter"
-                      ],
-                      "code-sm": [
-                              "monospace"
-                      ]
-              },
-              "fontSize": {
-                      "headline-xl": [
-                              "48px",
-                              {
-                                      "lineHeight": "56px",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "label-md": [
-                              "14px",
-                              {
-                                      "lineHeight": "20px",
-                                      "letterSpacing": "0.05em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "headline-md": [
-                              "24px",
-                              {
-                                      "lineHeight": "32px",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "24px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-lg": [
-                              "32px",
-                              {
-                                      "lineHeight": "40px",
-                                      "letterSpacing": "-0.01em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "28px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "code-sm": [
-                              "14px",
-                              {
-                                      "lineHeight": "20px",
-                                      "fontWeight": "400"
-                              }
-                      ]
-              }
-            }
-          }
-        }
-      </script>
-<style>
-    .no-scrollbar::-webkit-scrollbar {
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Myujin Dev Laravel Developer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#2d3449",
+              "inverse-on-surface": "#283044",
+              background: "#0b1326",
+              "tertiary-fixed": "#d5e3fd",
+              "surface-container-low": "#131b2e",
+              "surface-container": "#171f33",
+              "on-tertiary-fixed": "#0d1c2f",
+              "on-secondary-fixed-variant": "#3c475a",
+              "on-secondary": "#263143",
+              "on-tertiary-container": "#1d2b3e",
+              "secondary-fixed-dim": "#bcc7de",
+              "on-surface": "#dae2fd",
+              primary: "#a2c9fd",
+              "on-error-container": "#ffdad6",
+              surface: "#0b1326",
+              "primary-fixed": "#d2e4ff",
+              "on-primary-fixed": "#001c37",
+              "on-primary-fixed-variant": "#1c4875",
+              "outline-variant": "#42474f",
+              "secondary-container": "#3e495d",
+              "on-primary": "#00325a",
+              "surface-bright": "#31394d",
+              "inverse-primary": "#38608e",
+              "secondary-fixed": "#d8e3fb",
+              "surface-variant": "#2d3449",
+              "error-container": "#93000a",
+              tertiary: "#b9c7e0",
+              secondary: "#bcc7de",
+              "surface-tint": "#a2c9fd",
+              "surface-container-high": "#222a3d",
+              "primary-fixed-dim": "#a2c9fd",
+              "tertiary-fixed-dim": "#b9c7e0",
+              "surface-container-lowest": "#060e20",
+              "on-error": "#690005",
+              "on-secondary-container": "#aeb9d0",
+              error: "#ffb4ab",
+              "surface-dim": "#0b1326",
+              "inverse-surface": "#dae2fd",
+              "on-tertiary-fixed-variant": "#3a485c",
+              "on-background": "#dae2fd",
+              "on-primary-container": "#002c50",
+              outline: "#8c919a",
+              "on-surface-variant": "#c2c6d0",
+              "tertiary-container": "#8492a9",
+              "on-secondary-fixed": "#111c2d",
+              "primary-container": "#6d94c5",
+              "on-tertiary": "#233144",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "container-max": "1280px",
+              xs: "0.5rem",
+              base: "4px",
+              md: "1.5rem",
+              sm: "1rem",
+              gutter: "1.5rem",
+              lg: "2.5rem",
+              xl: "4rem",
+            },
+            fontFamily: {
+              "label-sm": ["JetBrains Mono"],
+              "headline-md": ["Space Grotesk"],
+              "body-lg": ["Inter"],
+              "headline-lg-mobile": ["Space Grotesk"],
+              "headline-sm": ["Space Grotesk"],
+              "body-md": ["Inter"],
+              "label-md": ["JetBrains Mono"],
+              "headline-lg": ["Space Grotesk"],
+              display: ["Space Grotesk"],
+              "code-sm": ["JetBrains Mono", "monospace"],
+            },
+            fontSize: {
+              "label-sm": ["0.75rem", { lineHeight: "1.5", fontWeight: "500" }],
+              "headline-md": ["2rem", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-lg": ["1.125rem", { lineHeight: "1.7", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "2.25rem",
+                { lineHeight: "1.2", fontWeight: "600" },
+              ],
+              "headline-sm": [
+                "1.5rem",
+                { lineHeight: "1.4", fontWeight: "500" },
+              ],
+              "body-md": ["1rem", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": [
+                "0.875rem",
+                {
+                  lineHeight: "1.5",
+                  letterSpacing: "0.05em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg": [
+                "3rem",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              display: [
+                "4.5rem",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "code-sm": ["0.875rem", { lineHeight: "1.5", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
         display: none;
-    }
-    .no-scrollbar {
+      }
+      .no-scrollbar {
         -ms-overflow-style: none;
         scrollbar-width: none;
-    }
-</style></head>
-<body class="bg-background text-on-background font-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopNavBar -->
-<nav class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline-variant full-width top-0 sticky z-50">
-<div class="flex justify-between items-center h-16 px-gutter max-w-max-width mx-auto w-full">
-<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tighter">
-                &lt;DEV_ARCHITECT/&gt;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-left.active,
+      .reveal-right.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      /* Staggered animation for children */
+      .reveal-stagger > * {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-stagger.active > * {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-stagger.active > *:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      .reveal-stagger.active > *:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+      .reveal-stagger.active > *:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+      .reveal-stagger.active > *:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+      .reveal-stagger.active > *:nth-child(5) {
+        transition-delay: 0.5s;
+      }
+      .reveal-stagger.active > *:nth-child(6) {
+        transition-delay: 0.6s;
+      }
+      .reveal-stagger.active > *:nth-child(7) {
+        transition-delay: 0.7s;
+      }
+      .reveal-stagger.active > *:nth-child(8) {
+        transition-delay: 0.8s;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-background font-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- TopNavBar -->
+    <nav
+      class="bg-surface border-b border-outline-variant full-width top-0 sticky z-50"
+    >
+      <div
+        class="flex justify-between items-center h-16 px-gutter max-w-[1280px] mx-auto w-full"
+      >
+        <div
+          class="font-headline-md text-headline-sm font-bold text-primary tracking-tighter"
+        >
+          &lt;MYUJIN_DEV/&gt;
+        </div>
+        <div class="hidden md:flex gap-sm h-full items-center">
+          <a
+            class="text-on-surface-variant font-label-md hover:text-primary transition-colors duration-200 h-full flex items-center px-sm"
+            href="#experience"
+            >Experience</a
+          >
+          <a
+            class="text-on-surface-variant font-label-md hover:text-primary transition-colors duration-200 h-full flex items-center px-sm"
+            href="#skills"
+            >Skills</a
+          >
+          <a
+            class="text-on-surface-variant font-label-md hover:text-primary transition-colors duration-200 h-full flex items-center px-sm"
+            href="#projects"
+            >Projects</a
+          >
+          <a
+            class="text-on-surface-variant font-label-md hover:text-primary transition-colors duration-200 h-full flex items-center px-sm"
+            href="#contact"
+            >Contact</a
+          >
+        </div>
+        <div>
+          <button
+            class="bg-primary-container text-on-primary-container font-label-md text-label-md px-sm py-xs rounded hover:opacity-90 transition-opacity border border-transparent hover:border-primary"
+          >
+            Resume
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main class="max-w-[1280px] mx-auto px-gutter w-full pb-xl">
+      <!-- Hero Section -->
+      <section
+        class="py-xl flex flex-col justify-center min-h-[70vh] border-b border-surface-container-highest reveal reveal-stagger"
+      >
+        <div class="max-w-3xl">
+          <div
+            class="inline-flex items-center gap-xs text-primary font-code-sm text-code-sm mb-md px-xs py-base bg-primary-container/10 border border-primary/20 rounded"
+          >
+            <span
+              class="material-symbols-outlined text-sm"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >terminal</span
+            >
+            System.out.println("Hello, Everyone!");
+          </div>
+          <h1 class="font-headline-lg text-headline-lg text-on-surface mb-md">
+            Laravel / PHP / Backend Developer
+          </h1>
+          <p class="font-body-lg text-body-lg text-tertiary mb-lg max-w-2xl">
+            As an experienced Laravel Developer with over three years of
+            experience, I have expertise in developing Laravel-based
+            applications with a focus on efficiency, scalability, and security.
+            I am committed to creating solutions that accelerate the development
+            process, improve performance, and simplify project management.
+          </p>
+          <div class="flex gap-sm">
+            <a
+              class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded hover:bg-primary-fixed transition-colors"
+              href="#projects"
+            >
+              View Projects
+            </a>
+            <a
+              class="bg-transparent border border-secondary text-secondary font-label-md text-label-md px-md py-sm rounded hover:bg-secondary/10 transition-colors"
+              href="#contact"
+            >
+              Let's Talk
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Experience Section -->
+      <section
+        class="py-xl border-b border-surface-container-highest reveal"
+        id="experience"
+      >
+        <h2 class="font-headline-lg text-headline-sm text-on-surface mb-lg">
+          Experience Architecture
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-lg relative">
+          <!-- Timeline/Image Column -->
+          <div class="lg:col-span-4 relative reveal-left">
+            <div
+              class="sticky top-24 rounded-lg overflow-hidden border border-outline-variant bg-surface-container h-[600px]"
+            >
+              <img
+                alt="Professional profile photo of the Backend Systems Architect"
+                class="w-full h-full object-cover object-top opacity-90"
+                src="./profile.png"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none"
+              ></div>
             </div>
-<div class="hidden md:flex gap-sm h-full items-center">
-<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md hover:text-primary dark:hover:text-primary transition-colors duration-200 h-full flex items-center px-sm" href="#experience">Experience</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md hover:text-primary dark:hover:text-primary transition-colors duration-200 h-full flex items-center px-sm" href="#skills">Skills</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md hover:text-primary dark:hover:text-primary transition-colors duration-200 h-full flex items-center px-sm" href="#projects">Projects</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md hover:text-primary dark:hover:text-primary transition-colors duration-200 h-full flex items-center px-sm" href="#contact">Contact</a>
-</div>
-<div>
-<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-sm py-xs rounded hover:opacity-90 transition-opacity scale-95 duration-100 ease-in-out border border-transparent hover:border-primary">
-                    Resume
-                </button>
-</div>
-</div>
-</nav>
-<main class="max-w-max-width mx-auto px-gutter w-full pb-xl">
-<!-- Hero Section -->
-<section class="py-xl flex flex-col justify-center min-h-[70vh] border-b border-surface-container-highest">
-<div class="max-w-3xl">
-<div class="inline-flex items-center gap-xs text-primary font-code-sm text-code-sm mb-md px-xs py-base bg-primary-container/10 border border-primary/20 rounded">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">terminal</span>
-                    System.out.println("Hello, World!");
+          </div>
+          <!-- Timeline Details -->
+          <div
+            class="lg:col-span-8 flex flex-col gap-md relative reveal-right reveal-stagger"
+          >
+            <div
+              class="absolute left-6 top-4 bottom-4 w-px bg-surface-container-highest hidden md:block"
+            ></div>
+            <!-- Experience Item 1 -->
+            <div class="relative pl-0 md:pl-12 group">
+              <div
+                class="hidden md:block absolute left-[21px] top-6 w-3 h-3 rounded-full border-2 border-primary bg-background group-hover:bg-primary transition-colors"
+              ></div>
+              <div
+                class="bg-surface-container border border-surface-container-highest p-md rounded-lg hover:border-outline-variant transition-colors group-hover:shadow-[0_0_15px_rgba(162,201,253,0.05)]"
+              >
+                <div
+                  class="flex flex-col md:flex-row justify-between md:items-center mb-sm"
+                >
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                    Onsite Programmer
+                  </h3>
+                  <span class="font-code-sm text-code-sm text-tertiary"
+                    >Medify | Aug 2025 - Present</span
+                  >
                 </div>
-<h1 class="font-headline-xl text-headline-xl text-on-surface mb-md">
-                    Backend Systems Architect &amp; Laravel Developer
-                </h1>
-<p class="font-body-lg text-body-lg text-tertiary mb-lg max-w-2xl">
-                    Specializing in building scalable, secure, and highly performant backend architectures. Passionate about clean code, robust system design, and transforming complex business requirements into elegant technical solutions.
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-sm"
+                >
+                  Developing and maintaining applications directly at the
+                  client's location. Implementing technical solutions according
+                  to business needs
                 </p>
-<div class="flex gap-sm">
-<a class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded hover:bg-primary-fixed transition-colors" href="#projects">
-                        View Projects
-                    </a>
-<a class="bg-transparent border border-secondary text-secondary font-label-md text-label-md px-md py-sm rounded hover:bg-secondary/10 transition-colors" href="#contact">
-                        Let's Talk
-                    </a>
-</div>
-</div>
-</section>
-<!-- Experience Section -->
-<section class="py-xl border-b border-surface-container-highest" id="experience">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-lg">Experience Architecture</h2>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg relative">
-<!-- Timeline/Image Column -->
-<div class="lg:col-span-4 relative">
-<div class="sticky top-24 rounded-lg overflow-hidden border border-outline-variant bg-surface-container h-[600px]">
-<img alt="Professional profile photo of the Backend Systems Architect" class="w-full h-full object-cover object-top opacity-90" src="./profile.png"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none"></div>
-</div>
-</div>
-<!-- Timeline Details -->
-<div class="lg:col-span-8 flex flex-col gap-md relative">
-<!-- Timeline Line -->
-<div class="absolute left-6 top-4 bottom-4 w-px bg-surface-container-highest hidden md:block"></div>
-<!-- Experience Item 1 -->
-<div class="relative pl-0 md:pl-12 group">
-<div class="hidden md:block absolute left-[21px] top-6 w-3 h-3 rounded-full border-2 border-primary bg-background group-hover:bg-primary transition-colors"></div>
-<div class="bg-surface-container border border-surface-container-highest p-md rounded-lg hover:border-outline-variant transition-colors group-hover:shadow-[0_0_15px_rgba(255,180,168,0.05)]">
-<div class="flex flex-col md:flex-row justify-between md:items-center mb-sm">
-<h3 class="font-headline-md text-headline-md text-on-surface">Onsite Programmer</h3>
-<span class="font-code-sm text-code-sm text-tertiary">Medify | Aug 2025 - Present</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-sm">
-                                Developing and maintaining applications directly at client locations, ensuring seamless integration and providing immediate technical solutions to complex operational challenges.
-                            </p>
-<div class="flex flex-wrap gap-xs">
-<span class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary">Laravel</span>
-<span class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary">Client Architecture</span>
-</div>
-</div>
-</div>
-<!-- Experience Item 2 -->
-<div class="relative pl-0 md:pl-12 group">
-<div class="hidden md:block absolute left-[21px] top-6 w-3 h-3 rounded-full border-2 border-secondary bg-background group-hover:bg-secondary transition-colors"></div>
-<div class="bg-surface-container border border-surface-container-highest p-md rounded-lg hover:border-outline-variant transition-colors group-hover:shadow-[0_0_15px_rgba(192,193,255,0.05)]">
-<div class="flex flex-col md:flex-row justify-between md:items-center mb-sm">
-<h3 class="font-headline-md text-headline-md text-on-surface">Staff IT</h3>
-<span class="font-code-sm text-code-sm text-tertiary">PT Menara Sinar Semesta | Nov 2023 - Aug 2025</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-sm">
-                                Spearheaded the development of reusable base code to accelerate project lifecycles. Conducted rigorous system analysis and testing to enforce stability and security protocols. Led IT product research to integrate modern frameworks.
-                            </p>
-<div class="flex flex-wrap gap-xs">
-<span class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary">System Analysis</span>
-<span class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary">Security Testing</span>
-</div>
-</div>
-</div>
-<!-- Experience Item 3 -->
-<div class="relative pl-0 md:pl-12 group">
-<div class="hidden md:block absolute left-[21px] top-6 w-3 h-3 rounded-full border-2 border-secondary bg-background group-hover:bg-secondary transition-colors"></div>
-<div class="bg-surface-container border border-surface-container-highest p-md rounded-lg hover:border-outline-variant transition-colors group-hover:shadow-[0_0_15px_rgba(192,193,255,0.05)]">
-<div class="flex flex-col md:flex-row justify-between md:items-center mb-sm">
-<h3 class="font-headline-md text-headline-md text-on-surface">PHP Developer</h3>
-<span class="font-code-sm text-code-sm text-tertiary">PT Javan Cipta Solusi | Feb 2022 - Aug 2023</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-sm">
-                                Architected and deployed scalable features using the Laravel framework. Implemented comprehensive automated testing suites and maintained rigorous technical documentation for core microservices.
-                            </p>
-<div class="flex flex-wrap gap-xs">
-<span class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary">PHP</span>
-<span class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary">Laravel</span>
-<span class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary">TDD</span>
-</div>
-</div>
-</div>
-<!-- Experience Item 4 -->
-<div class="relative pl-0 md:pl-12 group">
-<div class="hidden md:block absolute left-[21px] top-6 w-3 h-3 rounded-full border-2 border-surface-variant bg-background group-hover:bg-surface-variant transition-colors"></div>
-<div class="bg-surface-container border border-surface-container-highest p-md rounded-lg hover:border-outline-variant transition-colors">
-<div class="flex flex-col md:flex-row justify-between md:items-center mb-sm">
-<h3 class="font-headline-md text-headline-md text-on-surface">Fullstack Web Developer Bootcamp</h3>
-<span class="font-code-sm text-code-sm text-tertiary">Yaumi Indonesia | Sep 2021 - Feb 2022</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-sm">
-                                Intensive training covering foundational and advanced web technologies. Mastered HTML, CSS, JavaScript, Git version control, PHP, Object-Oriented Programming (OOP), MySQL, and Laravel.
-                            </p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Skills Section -->
-<section class="py-xl border-b border-surface-container-highest" id="skills">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-lg">Technical Arsenal</h2>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
-<!-- Skill Badges -->
-<div class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-primary transition-colors group">
-<span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Laravel</span>
-<span class="font-code-sm text-code-sm text-tertiary">Framework</span>
-</div>
-<div class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-secondary transition-colors group">
-<span class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors">PHP</span>
-<span class="font-code-sm text-code-sm text-tertiary">Language</span>
-</div>
-<div class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-secondary transition-colors group">
-<span class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors">MySQL</span>
-<span class="font-code-sm text-code-sm text-tertiary">Database</span>
-</div>
-<div class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-secondary transition-colors group">
-<span class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors">OOP</span>
-<span class="font-code-sm text-code-sm text-tertiary">Paradigm</span>
-</div>
-<div class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-outline transition-colors group">
-<span class="font-headline-md text-headline-md text-on-surface group-hover:text-outline transition-colors">Git</span>
-<span class="font-code-sm text-code-sm text-tertiary">VCS</span>
-</div>
-<div class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-outline transition-colors group">
-<span class="font-headline-md text-headline-md text-on-surface group-hover:text-outline transition-colors">JavaScript</span>
-<span class="font-code-sm text-code-sm text-tertiary">Frontend</span>
-</div>
-<div class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-outline transition-colors group">
-<span class="font-headline-md text-headline-md text-on-surface group-hover:text-outline transition-colors">CSS</span>
-<span class="font-code-sm text-code-sm text-tertiary">Styling</span>
-</div>
-<div class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-outline transition-colors group">
-<span class="font-headline-md text-headline-md text-on-surface group-hover:text-outline transition-colors">HTML</span>
-<span class="font-code-sm text-code-sm text-tertiary">Markup</span>
-</div>
-</div>
-</section>
-<!-- Projects Section -->
-<section class="py-xl border-b border-surface-container-highest" id="projects">
-<div class="flex justify-between items-end mb-lg">
-<h2 class="font-headline-lg text-headline-lg text-on-surface">System Implementations</h2>
-<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-xs" href="#">
-                    View GitHub Repository <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-<div class="relative group/carousel"><button class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 bg-surface-container-high border border-outline-variant text-on-surface p-2 rounded-full hidden md:flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all opacity-0 group-hover/carousel:opacity-100 shadow-xl">
-<span class="material-symbols-outlined">chevron_left</span>
-</button><button class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 bg-surface-container-high border border-outline-variant text-on-surface p-2 rounded-full hidden md:flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all opacity-0 group-hover/carousel:opacity-100 shadow-xl">
-<span class="material-symbols-outlined">chevron_right</span>
-</button></div><div class="flex overflow-x-auto gap-md pb-md snap-x snap-mandatory scrollbar-hide relative no-scrollbar">
-<!-- Project Card 1 -->
-<div class="bg-surface-container border border-surface-container-highest rounded-lg overflow-hidden group hover:border-primary transition-colors flex flex-col h-full min-w-[350px] md:min-w-[400px] snap-start">
-<div class="bg-surface-bright h-48 border-b border-surface-container-highest p-sm relative flex items-start justify-between">
-<!-- Code Block Mockup -->
-<div class="absolute inset-0 opacity-20 font-code-sm text-xs p-sm text-tertiary overflow-hidden pointer-events-none">
-<pre>namespace App\Http\Controllers;
+                <div class="flex flex-wrap gap-xs">
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >RestFull API</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Laravel</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >PHP</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >MySQL</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Bootstrap CSS</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Tailwind CSS</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Node JS</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >MongoDB</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >PostgreSQL</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Server Infrastructure</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Ubuntu</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Linux</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Client Communication</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Requirement Analysis</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Problem Solving</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Experience Item 2 -->
+            <div class="relative pl-0 md:pl-12 group">
+              <div
+                class="hidden md:block absolute left-[21px] top-6 w-3 h-3 rounded-full border-2 border-secondary bg-background group-hover:bg-secondary transition-colors"
+              ></div>
+              <div
+                class="bg-surface-container border border-surface-container-highest p-md rounded-lg hover:border-outline-variant transition-colors group-hover:shadow-[0_0_15px_rgba(188,199,222,0.05)]"
+              >
+                <div
+                  class="flex flex-col md:flex-row justify-between md:items-center mb-sm"
+                >
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                    Staff IT
+                  </h3>
+                  <span class="font-code-sm text-code-sm text-tertiary"
+                    >PT Menara Sinar Semesta | Nov 2023 - Aug 2025</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-sm"
+                >
+                  Developing reusable base code across multiple projects to improve development efficiency. Analyzing system requirements and designing solutions. Testing systems for application stability and security. Contributing to IT product research and development to enhance company innovation.
+                </p>
+                <div class="flex flex-wrap gap-xs">
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >RestFull API</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Laravel</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >PHP</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >MySQL</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Bootstrap CSS</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Tailwind CSS</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Node JS</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >MongoDB</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >PostgreSQL</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Server Infrastructure</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Ubuntu</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Linux</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Experience Item 3 -->
+            <div class="relative pl-0 md:pl-12 group">
+              <div
+                class="hidden md:block absolute left-[21px] top-6 w-3 h-3 rounded-full border-2 border-secondary bg-background group-hover:bg-secondary transition-colors"
+              ></div>
+              <div
+                class="bg-surface-container border border-surface-container-highest p-md rounded-lg hover:border-outline-variant transition-colors group-hover:shadow-[0_0_15px_rgba(188,199,222,0.05)]"
+              >
+                <div
+                  class="flex flex-col md:flex-row justify-between md:items-center mb-sm"
+                >
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                    PHP Developer
+                  </h3>
+                  <span class="font-code-sm text-code-sm text-tertiary"
+                    >PT Javan Cipta Solusi | Feb 2022 - Aug 2023</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-sm"
+                >
+                  Developing features according to analyst requirements with Laravel. Implementing automated testing for system validation. Documenting complex code well. Completing tasks efficiently and proactively.
+                </p>
+                <div class="flex flex-wrap gap-xs">
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Laravel</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >PHP</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >MySQL</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >PostgreSQL</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >MongoDB</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Bootstrap CSS</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >JavaScript</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Experience Item 4 -->
+            <div class="relative pl-0 md:pl-12 group">
+              <div
+                class="hidden md:block absolute left-[21px] top-6 w-3 h-3 rounded-full border-2 border-surface-variant bg-background group-hover:bg-surface-variant transition-colors"
+              ></div>
+              <div
+                class="bg-surface-container border border-surface-container-highest p-md rounded-lg hover:border-outline-variant transition-colors"
+              >
+                <div
+                  class="flex flex-col md:flex-row justify-between md:items-center mb-sm"
+                >
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                    Fullstack Web Developer Bootcamp
+                  </h3>
+                  <span class="font-code-sm text-code-sm text-tertiary"
+                    >Yaumi Indonesia | Sep 2021 - Feb 2022</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-sm"
+                >
+                  Learning HTML, CSS, JS, Git, PHP, OOP, MySQL, and Laravel. Developing a final project based on Laravel
+                </p>
+                <div class="flex flex-wrap gap-xs">
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Laravel</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >PHP</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >MySQL</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >CSS</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="px-xs py-base bg-surface-bright border border-surface-container-highest rounded font-code-sm text-code-sm text-secondary"
+                    >Git</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Skills Section -->
+      <section
+        class="py-xl border-b border-surface-container-highest reveal"
+        id="skills"
+      >
+        <h2 class="font-headline-lg text-headline-sm text-on-surface mb-lg">
+          Frequently Used Technologies
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-sm reveal-stagger">
+          <div
+            class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-primary transition-colors group"
+          >
+            <span
+              class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors"
+              >Laravel</span
+            >
+            <span class="font-code-sm text-code-sm text-tertiary"
+              >Framework</span
+            >
+          </div>
+          <div
+            class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-secondary transition-colors group"
+          >
+            <span
+              class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors"
+              >PHP</span
+            >
+            <span class="font-code-sm text-code-sm text-tertiary"
+              >Language</span
+            >
+          </div>
+          <div
+            class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-secondary transition-colors group"
+          >
+            <span
+              class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors"
+              >MySQL</span
+            >
+            <span class="font-code-sm text-code-sm text-tertiary"
+              >Database</span
+            >
+          </div>
+          <div
+            class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-secondary transition-colors group"
+          >
+            <span
+              class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors"
+              >OOP</span
+            >
+            <span class="font-code-sm text-code-sm text-tertiary"
+              >Paradigm</span
+            >
+          </div>
+          <div
+            class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-outline transition-colors group"
+          >
+            <span
+              class="font-headline-sm text-headline-sm text-on-surface group-hover:text-outline transition-colors"
+              >Git</span
+            >
+            <span class="font-code-sm text-code-sm text-tertiary">VCS</span>
+          </div>
+          <div
+            class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-outline transition-colors group"
+          >
+            <span
+              class="font-headline-sm text-headline-sm text-on-surface group-hover:text-outline transition-colors"
+              >JavaScript</span
+            >
+            <span class="font-code-sm text-code-sm text-tertiary"
+              >Frontend</span
+            >
+          </div>
+          <div
+            class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-outline transition-colors group"
+          >
+            <span
+              class="font-headline-sm text-headline-sm text-on-surface group-hover:text-outline transition-colors"
+              >CSS</span
+            >
+            <span class="font-code-sm text-code-sm text-tertiary">Styling</span>
+          </div>
+          <div
+            class="bg-surface-container border border-surface-container-highest rounded p-md flex flex-col items-center justify-center gap-xs hover:border-outline transition-colors group"
+          >
+            <span
+              class="font-headline-sm text-headline-sm text-on-surface group-hover:text-outline transition-colors"
+              >HTML</span
+            >
+            <span class="font-code-sm text-code-sm text-tertiary">Markup</span>
+          </div>
+        </div>
+      </section>
+      <!-- Projects Section -->
+      <section
+        class="py-xl border-b border-surface-container-highest reveal"
+        id="projects"
+      >
+        <div class="flex justify-between items-end mb-lg">
+          <h2 class="font-headline-lg text-headline-sm text-on-surface">
+            System Implementations
+          </h2>
+          <a
+            class="font-label-md text-label-md text-primary hover:underline flex items-center gap-xs"
+            href="#"
+          >
+            View GitHub Repository
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+        <div class="relative group/carousel">
+          <button
+            class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 bg-surface-container-high border border-outline-variant text-on-surface p-2 rounded-full hidden md:flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all opacity-0 group-hover/carousel:opacity-100 shadow-xl"
+          >
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <button
+            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 bg-surface-container-high border border-outline-variant text-on-surface p-2 rounded-full hidden md:flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all opacity-0 group-hover/carousel:opacity-100 shadow-xl"
+          >
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+        <div
+          class="flex overflow-x-auto gap-md pb-md snap-x snap-mandatory scrollbar-hide relative no-scrollbar"
+        >
+          <!-- Project Card 1 -->
+          <div
+            class="bg-surface-container border border-surface-container-highest rounded-lg overflow-hidden group hover:border-primary transition-colors flex flex-col h-full min-w-[350px] md:min-w-[400px] snap-start"
+          >
+            <div
+              class="bg-surface-bright h-48 border-b border-surface-container-highest p-sm relative flex items-start justify-between"
+            >
+              <div
+                class="absolute inset-0 opacity-20 font-code-sm text-xs p-sm text-tertiary overflow-hidden pointer-events-none"
+              >
+                <pre>
+namespace App\Http\Controllers;
 use App\Models\Order;
 class OrderController extends Controller {
     public function store(Request $request) {
@@ -360,153 +754,394 @@ class OrderController extends Controller {
             // Complex logic
         });
     }
-}
-                            </pre>
-</div>
-<div class="z-10 bg-background/80 backdrop-blur px-xs py-base rounded border border-surface-container-highest">
-<span class="font-code-sm text-code-sm text-primary">PHP / Laravel</span>
-</div>
-<span class="material-symbols-outlined text-tertiary z-10">terminal</span>
-</div>
-<div class="p-md flex flex-col flex-grow">
-<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">E-commerce Platform</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">
-                            A highly scalable backend API for a multi-vendor e-commerce platform. Features complex database transactions, background job processing for order fulfillment, and robust caching.
-                        </p>
-<div class="mt-auto pt-sm border-t border-surface-container-highest flex justify-between items-center">
-<div class="flex gap-xs text-tertiary font-code-sm text-code-sm">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span> 12</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">fork_right</span> 4</span>
-</div>
-<a class="text-secondary font-label-md text-label-md hover:text-primary transition-colors" href="#">Details</a>
-</div>
-</div>
-</div>
-<!-- Project Card 2 -->
-<div class="bg-surface-container border border-surface-container-highest rounded-lg overflow-hidden group hover:border-secondary transition-colors flex flex-col h-full min-w-[350px] md:min-w-[400px] snap-start">
-<div class="bg-surface-bright h-48 border-b border-surface-container-highest p-sm relative flex items-start justify-between">
-<div class="absolute inset-0 opacity-20 font-code-sm text-xs p-sm text-tertiary overflow-hidden pointer-events-none">
-<pre>Schema::create('customers', function (Blueprint $table) {
+}</pre
+                >
+              </div>
+              <div
+                class="z-10 bg-background/80 backdrop-blur px-xs py-base rounded border border-surface-container-highest"
+              >
+                <span class="font-code-sm text-code-sm text-primary"
+                  >PHP / Laravel</span
+                >
+              </div>
+              <span class="material-symbols-outlined text-tertiary z-10"
+                >terminal</span
+              >
+            </div>
+            <div class="p-md flex flex-col flex-grow">
+              <h3
+                class="font-headline-sm text-headline-sm text-on-surface mb-xs"
+              >
+                E-commerce Platform
+              </h3>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow"
+              >
+                A highly scalable backend API for a multi-vendor e-commerce
+                platform. Features complex database transactions, background job
+                processing for order fulfillment, and robust caching.
+              </p>
+              <div
+                class="mt-auto pt-sm border-t border-surface-container-highest flex justify-between items-center"
+              >
+                <div
+                  class="flex gap-xs text-tertiary font-code-sm text-code-sm"
+                >
+                  <span class="flex items-center gap-1"
+                    ><span
+                      class="material-symbols-outlined text-xs"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >star</span
+                    >
+                    12</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-xs"
+                      >fork_right</span
+                    >
+                    4</span
+                  >
+                </div>
+                <a
+                  class="text-secondary font-label-md text-label-md hover:text-primary transition-colors"
+                  href="#"
+                  >Details</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 2 -->
+          <div
+            class="bg-surface-container border border-surface-container-highest rounded-lg overflow-hidden group hover:border-secondary transition-colors flex flex-col h-full min-w-[350px] md:min-w-[400px] snap-start"
+          >
+            <div
+              class="bg-surface-bright h-48 border-b border-surface-container-highest p-sm relative flex items-start justify-between"
+            >
+              <div
+                class="absolute inset-0 opacity-20 font-code-sm text-xs p-sm text-tertiary overflow-hidden pointer-events-none"
+              >
+                <pre>
+Schema::create('customers', function (Blueprint $table) {
     $table-&gt;id();
     $table-&gt;string('name');
     $table-&gt;json('metadata')-&gt;nullable();
     $table-&gt;index(['created_at']);
-});
-                            </pre>
-</div>
-<div class="z-10 bg-background/80 backdrop-blur px-xs py-base rounded border border-surface-container-highest">
-<span class="font-code-sm text-code-sm text-secondary">Vue / Laravel</span>
-</div>
-<span class="material-symbols-outlined text-tertiary z-10">database</span>
-</div>
-<div class="p-md flex flex-col flex-grow">
-<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">CRM System</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">
-                            Custom Customer Relationship Management dashboard built for internal operational teams. Focuses on data integrity, advanced reporting queries, and role-based access control (RBAC).
-                        </p>
-<div class="mt-auto pt-sm border-t border-surface-container-highest flex justify-between items-center">
-<div class="flex gap-xs text-tertiary font-code-sm text-code-sm">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span> 8</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">fork_right</span> 2</span>
-</div>
-<a class="text-secondary font-label-md text-label-md hover:text-primary transition-colors" href="#">Details</a>
-</div>
-</div>
-</div>
-<!-- Project Card 3 -->
-<div class="bg-surface-container border border-surface-container-highest rounded-lg overflow-hidden group hover:border-outline transition-colors flex flex-col h-full min-w-[350px] md:min-w-[400px] snap-start">
-<div class="bg-surface-bright h-48 border-b border-surface-container-highest p-sm relative flex items-start justify-between">
-<div class="absolute inset-0 opacity-20 font-code-sm text-xs p-sm text-tertiary overflow-hidden pointer-events-none">
-<pre>Route::middleware('auth:api')-&gt;group(function () {
+});</pre
+                >
+              </div>
+              <div
+                class="z-10 bg-background/80 backdrop-blur px-xs py-base rounded border border-surface-container-highest"
+              >
+                <span class="font-code-sm text-code-sm text-secondary"
+                  >Vue / Laravel</span
+                >
+              </div>
+              <span class="material-symbols-outlined text-tertiary z-10"
+                >database</span
+              >
+            </div>
+            <div class="p-md flex flex-col flex-grow">
+              <h3
+                class="font-headline-sm text-headline-sm text-on-surface mb-xs"
+              >
+                CRM System
+              </h3>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow"
+              >
+                Custom Customer Relationship Management dashboard built for
+                internal operational teams. Focuses on data integrity, advanced
+                reporting queries, and role-based access control (RBAC).
+              </p>
+              <div
+                class="mt-auto pt-sm border-t border-surface-container-highest flex justify-between items-center"
+              >
+                <div
+                  class="flex gap-xs text-tertiary font-code-sm text-code-sm"
+                >
+                  <span class="flex items-center gap-1"
+                    ><span
+                      class="material-symbols-outlined text-xs"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >star</span
+                    >
+                    8</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-xs"
+                      >fork_right</span
+                    >
+                    2</span
+                  >
+                </div>
+                <a
+                  class="text-secondary font-label-md text-label-md hover:text-primary transition-colors"
+                  href="#"
+                  >Details</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 3 -->
+          <div
+            class="bg-surface-container border border-surface-container-highest rounded-lg overflow-hidden group hover:border-outline transition-colors flex flex-col h-full min-w-[350px] md:min-w-[400px] snap-start"
+          >
+            <div
+              class="bg-surface-bright h-48 border-b border-surface-container-highest p-sm relative flex items-start justify-between"
+            >
+              <div
+                class="absolute inset-0 opacity-20 font-code-sm text-xs p-sm text-tertiary overflow-hidden pointer-events-none"
+              >
+                <pre>
+Route::middleware('auth:api')-&gt;group(function () {
     Route::get('/v1/data', 'DataController@index');
     Route::post('/v1/sync', 'SyncController@store');
-});
-                            </pre>
-</div>
-<div class="z-10 bg-background/80 backdrop-blur px-xs py-base rounded border border-surface-container-highest">
-<span class="font-code-sm text-code-sm text-outline">REST API</span>
-</div>
-<span class="material-symbols-outlined text-tertiary z-10">api</span>
-</div>
-<div class="p-md flex flex-col flex-grow">
-<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">API Gateway</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">
-                            A centralized routing and rate-limiting service that securely exposes internal microservices to external mobile clients. Includes comprehensive documentation generated via Swagger.
-                        </p>
-<div class="mt-auto pt-sm border-t border-surface-container-highest flex justify-between items-center">
-<div class="flex gap-xs text-tertiary font-code-sm text-code-sm">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span> 24</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">fork_right</span> 10</span>
-</div>
-<a class="text-secondary font-label-md text-label-md hover:text-primary transition-colors" href="#">Details</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Contact Section -->
-<section class="py-xl" id="contact">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
-<div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Initialize Connection</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-lg">
-                        Currently available for new opportunities, architectural consulting, and open-source collaborations. My inbox is always open.
-                    </p>
-<div class="flex flex-col gap-sm">
-<a class="flex items-center gap-sm p-sm bg-surface-container border border-surface-container-highest rounded hover:border-primary transition-colors group" href="#">
-<span class="material-symbols-outlined text-tertiary group-hover:text-primary transition-colors">mail</span>
-<span class="font-code-sm text-code-sm text-on-surface">hello@developer.local</span>
-</a>
-<a class="flex items-center gap-sm p-sm bg-surface-container border border-surface-container-highest rounded hover:border-secondary transition-colors group" href="#">
-<span class="material-symbols-outlined text-tertiary group-hover:text-secondary transition-colors">code</span>
-<span class="font-code-sm text-code-sm text-on-surface">github.com/architect</span>
-</a>
-<a class="flex items-center gap-sm p-sm bg-surface-container border border-surface-container-highest rounded hover:border-secondary transition-colors group" href="#">
-<span class="material-symbols-outlined text-tertiary group-hover:text-secondary transition-colors">work</span>
-<span class="font-code-sm text-code-sm text-on-surface">linkedin.com/in/architect</span>
-</a>
-</div>
-</div>
-<div class="bg-surface-container border border-surface-container-highest rounded-lg p-lg relative overflow-hidden">
-<!-- Subtle code background for form -->
-<div class="absolute -right-10 -top-10 opacity-5 font-code-sm text-4xl pointer-events-none select-none text-tertiary rotate-12">
-                        POST /contact
-                    </div>
-<form class="relative z-10 flex flex-col gap-md">
-<div>
-<label class="block font-label-md text-label-md text-tertiary mb-xs" for="name">Name</label>
-<input class="w-full bg-background border border-surface-container-highest rounded px-sm py-xs text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none font-body-md text-body-md placeholder:text-surface-variant" id="name" placeholder="$request-&gt;name" type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-tertiary mb-xs" for="email">Email</label>
-<input class="w-full bg-background border border-surface-container-highest rounded px-sm py-xs text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none font-body-md text-body-md placeholder:text-surface-variant" id="email" placeholder="$request-&gt;email" type="email"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-tertiary mb-xs" for="message">Message</label>
-<textarea class="w-full bg-background border border-surface-container-highest rounded px-sm py-xs text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none font-body-md text-body-md placeholder:text-surface-variant resize-none" id="message" placeholder="$request-&gt;message" rows="4"></textarea>
-</div>
-<button class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded hover:bg-primary-fixed transition-colors flex items-center justify-center gap-xs mt-sm w-full md:w-auto self-start" type="button">
-                            Execute Request <span class="material-symbols-outlined text-sm">send</span>
-</button>
-</form>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline-variant full-width py-12">
-<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-max-width mx-auto w-full gap-sm">
-<div class="font-headline-sm text-headline-sm font-bold text-on-surface text-lg">
-                &lt;DEV_ARCHITECT/&gt;
+});</pre
+                >
+              </div>
+              <div
+                class="z-10 bg-background/80 backdrop-blur px-xs py-base rounded border border-surface-container-highest"
+              >
+                <span class="font-code-sm text-code-sm text-outline"
+                  >REST API</span
+                >
+              </div>
+              <span class="material-symbols-outlined text-tertiary z-10"
+                >api</span
+              >
             </div>
-<div class="text-secondary dark:text-secondary font-body-md text-body-md text-center md:text-left">
-                © 2024 Backend Systems Architect. Built with Laravel &amp; Precision.
+            <div class="p-md flex flex-col flex-grow">
+              <h3
+                class="font-headline-sm text-headline-sm text-on-surface mb-xs"
+              >
+                API Gateway
+              </h3>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow"
+              >
+                A centralized routing and rate-limiting service that securely
+                exposes internal microservices to external mobile clients.
+                Includes comprehensive documentation generated via Swagger.
+              </p>
+              <div
+                class="mt-auto pt-sm border-t border-surface-container-highest flex justify-between items-center"
+              >
+                <div
+                  class="flex gap-xs text-tertiary font-code-sm text-code-sm"
+                >
+                  <span class="flex items-center gap-1"
+                    ><span
+                      class="material-symbols-outlined text-xs"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >star</span
+                    >
+                    24</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-xs"
+                      >fork_right</span
+                    >
+                    10</span
+                  >
+                </div>
+                <a
+                  class="text-secondary font-label-md text-label-md hover:text-primary transition-colors"
+                  href="#"
+                  >Details</a
+                >
+              </div>
             </div>
-<div class="flex gap-md">
-<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary dark:hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">GitHub</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary dark:hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">LinkedIn</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary dark:hover:text-primary transition-all opacity-80 hover:opacity-100" href="#">Documentation</a>
-</div>
-</div>
-</footer>
-</body></html>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section class="py-xl reveal" id="contact">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+          <div>
+            <h2 class="font-headline-lg text-headline-sm text-on-surface mb-sm">
+              Initialize Connection
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-lg">
+              Currently available for new opportunities, architectural
+              consulting, and open-source collaborations. My inbox is always
+              open.
+            </p>
+            <div class="flex flex-col gap-sm">
+              <a
+                class="flex items-center gap-sm p-sm bg-surface-container border border-surface-container-highest rounded hover:border-primary transition-colors group"
+                href="#"
+              >
+                <span
+                  class="material-symbols-outlined text-tertiary group-hover:text-primary transition-colors"
+                  >mail</span
+                >
+                <span class="font-code-sm text-code-sm text-on-surface"
+                  >myukaqa.official@gmail.com</span
+                >
+              </a>
+              <a
+                class="flex items-center gap-sm p-sm bg-surface-container border border-surface-container-highest rounded hover:border-secondary transition-colors group"
+                href="#"
+              >
+                <span
+                  class="material-symbols-outlined text-tertiary group-hover:text-secondary transition-colors"
+                  >code</span
+                >
+                <span class="font-code-sm text-code-sm text-on-surface"
+                  >github.com/MyukaQA</span
+                >
+              </a>
+              <a
+                class="flex items-center gap-sm p-sm bg-surface-container border border-surface-container-highest rounded hover:border-secondary transition-colors group"
+                href="#"
+              >
+                <span
+                  class="material-symbols-outlined text-tertiary group-hover:text-secondary transition-colors"
+                  >work</span
+                >
+                <span class="font-code-sm text-code-sm text-on-surface"
+                  >linkedin.com/in/architect</span
+                >
+              </a>
+            </div>
+          </div>
+          <div
+            class="bg-surface-container border border-surface-container-highest rounded-lg p-lg relative overflow-hidden"
+          >
+            <div
+              class="absolute -right-10 -top-10 opacity-5 font-code-sm text-4xl pointer-events-none select-none text-tertiary rotate-12"
+            >
+              POST /contact
+            </div>
+            <form class="relative z-10 flex flex-col gap-md">
+              <div>
+                <label
+                  class="block font-label-md text-label-sm text-tertiary mb-xs"
+                  for="name"
+                  >Name</label
+                >
+                <input
+                  class="w-full bg-background border border-surface-container-highest rounded px-sm py-xs text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none font-body-md text-body-md placeholder:text-surface-variant"
+                  id="name"
+                  placeholder="$request-&gt;name"
+                  type="text"
+                />
+              </div>
+              <div>
+                <label
+                  class="block font-label-md text-label-sm text-tertiary mb-xs"
+                  for="email"
+                  >Email</label
+                >
+                <input
+                  class="w-full bg-background border border-surface-container-highest rounded px-sm py-xs text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none font-body-md text-body-md placeholder:text-surface-variant"
+                  id="email"
+                  placeholder="$request-&gt;email"
+                  type="email"
+                />
+              </div>
+              <div>
+                <label
+                  class="block font-label-md text-label-sm text-tertiary mb-xs"
+                  for="message"
+                  >Message</label
+                >
+                <textarea
+                  class="w-full bg-background border border-surface-container-highest rounded px-sm py-xs text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none font-body-md text-body-md placeholder:text-surface-variant resize-none"
+                  id="message"
+                  placeholder="$request-&gt;message"
+                  rows="4"
+                ></textarea>
+              </div>
+              <button
+                class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded hover:bg-primary-fixed transition-colors flex items-center justify-center gap-xs mt-sm w-full md:w-auto self-start"
+                type="button"
+              >
+                Execute Request
+                <span class="material-symbols-outlined text-sm">send</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-lowest border-t border-outline-variant full-width py-12"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-[1280px] mx-auto w-full gap-sm"
+      >
+        <div
+          class="font-headline-sm text-headline-sm font-bold text-on-surface text-lg"
+        >
+          &lt;DEV_ARCHITECT/&gt;
+        </div>
+        <div
+          class="text-secondary font-body-md text-body-md text-center md:text-left"
+        >
+          © 2024 Backend Systems Architect. Built with Laravel &amp; Precision.
+        </div>
+        <div class="flex gap-md">
+          <a
+            class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all opacity-80 hover:opacity-100"
+            href="#"
+            >GitHub</a
+          >
+          <a
+            class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all opacity-80 hover:opacity-100"
+            href="#"
+            >LinkedIn</a
+          >
+          <a
+            class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all opacity-80 hover:opacity-100"
+            href="#"
+            >Documentation</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Scroll Reveal Logic
+      const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            // Optional: stop observing once revealed
+            // observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(
+          ".reveal, .reveal-left, .reveal-right, .reveal-stagger",
+        )
+        .forEach((section) => {
+          observer.observe(section);
+        });
+
+      // Smooth scrolling for navigation links (already handled by CSS, but this adds more control if needed)
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          e.preventDefault();
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
